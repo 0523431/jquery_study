@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>html 함수예제 : text 함수와 비교</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+//		$("div").html("<h1>Header</h1>") // 태그를 인식해서 파싱해서 html에 뿌려
+//		$("div").text("<h1>Header</h1>")
+
+		// div태그에 h1태그 추가하기 + index 추가
+		$("div").html(function(i) {
+			return "<h1>Header=> "+i+"</h1>";
+		});
+	})
+</script>
+</head>
+<body>
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</body>
+</html>

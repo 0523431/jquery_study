@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>style css 함수 예제</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var color = ["red","white","purple"];
+		/* $("h1").css('color', function(index) {
+			return color[index];
+		}) */
+		
+		// 바탕색을 검정으로 변경하기
+		$("h1").css({
+			'color':function(index) {
+				return color[index];
+			},
+			'backgroundColor':'black'
+		});
+		
+		/* $("h1").css('color', function(index) {
+			return color[index];
+		}).css() */
+	})
+</script>
+</head>
+<body>
+
+<h1>Header_0 : red</h1>
+<h1>Header_0 : white</h1>
+<h1>Header_0 : purple</h1>
+
+</body>
+</html>

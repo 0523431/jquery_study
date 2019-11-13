@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>style을 담당하는 css 함수 예제</title>
+<style type="text/css">
+	.first {color : red;}
+	.second {color : pink;}
+	.third {color : orange;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// $("h1") : 첫번째 h1의 값
+	/* $(function() {
+		var color = $("h1").css("color");
+		alert(color);
+	}) */
+	
+	$(function() {
+		var color = $(".first").css("color");
+		alert(color);
+		color = $(".second").css("color");
+		alert(color);
+		color = $(".third").css("color");
+		alert(color);
+	})
+</script>
+</head>
+<body>
+
+<h1 class="first">Header_0</h1>
+<h1 class="second">Header_1</h1>
+<h1 class="third">Header_2</h1>
+
+</body>
+</html>

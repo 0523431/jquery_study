@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>선 그리기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// id속성값이 canvas인 객체 canvas
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+		
+		// 변수명을 넣음 : $(canvas)
+		// 원래 쓰던 형태 : $("#canvas")
+		$(canvas).on({
+			mousedown : function(event) {
+				var position = $(this).offset();
+				// canvas에서 제공해주는 기준 좌표
+				var x = event.pageX - position.left;
+				var y = event.pageY - position.top;
+				
+				context.beginPath(); // 시작점
+				context.moveTo(x,y); // 시작점 처장
+			},
+			mouseup : function(event) {
+				var position = $(this).offset();
+				// x,y : 마우스가 up된 좌표
+				var x = event.pageX - position.left;
+				var y = event.pageY - position.top;
+				
+				context.lineTo(x,y);
+				context.stroke(); // 해제
+			}
+		})
+	})
+</script>
+</head>
+<body>
+
+<canvas id="canvas" width="700" height="400" style="border:3px solid black">
+</canvas>
+
+</body>
+</html>

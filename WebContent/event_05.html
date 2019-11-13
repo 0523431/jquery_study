@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>기본으로 제공되는 이벤트 무시하기</title>
+<style type="text/css">
+	* { margin : 5px; padding:5px;
+		border : 3px solid gray;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("a").click(function(event) {
+			$(this).css("background-color","lightblue")
+			// 이벤트의 전파를 방지해 줌
+			// 그러니까 a태그를 눌렀으면 a태그 부분만 lightblue로 바뀌고
+			// h1부분은 따로 클릭했을 때, 아래 설정한 이벤트 lightgray로 바뀌게 됨
+			// 이 함수가 없으면, a태그 클릭시 h1태그 부분도 한꺼번에 바뀌게 됨
+			event.stopPropagation();
+			event.preventDefault(); // 기본으로 제공되는 이벤트 취소
+			// 두개를 한 번에 처리해줌
+			// return false;
+		})
+		
+		$("h1").click(function() {
+			$(this).css("background-color", "lightgray");
+		})
+	})
+</script>
+</head>
+<body>
+<h1>
+	<a href="http://www.goodee.co.kr">구디아카데미</a>
+</h1>
+
+<h1>Header_1 h1태그</h1>
+</body>
+</html>

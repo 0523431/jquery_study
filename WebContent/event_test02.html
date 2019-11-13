@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>입력된 내용 alert창에 출력하기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// form 객체에 submit 이벤트 발생시, submit버튼 클릭된 경우
+		$("#myform").submit(function(event) {
+			var name = $(this).find("#name").val();
+			var pass = $(this).find("#password").val();
+			alert(name+", "+pass);
+			event.preventDefault();
+		})
+		
+		// submit을 클릭했을 때,
+		/* $("input[type=submit]").click(function(event) {
+			alert($("#name").val()+", "+$("#password").val());
+			event.preventDefault(); // submit 이벤트 취소
+			//return false;
+		}) */
+		
+		/* $("input:submit").click(function() {
+			alert($("#name").val()+", "+$("#password").val());
+			retrun false;
+		}) */
+	})
+</script>
+</head>
+<body>
+제출 버튼이 클릭되면 입력된 이름과 비밀번호를 alert창에 출력하기 (단, 입력된 내용은 남아있어야함)
+<form id="myform">
+	이름 : <input type="text" name="name" id="name"><br>
+	비밀번호 : <input type="password" name="password" id="password"><br>
+	<input type="submit" value="제출">
+</form>
+</body>
+</html>
