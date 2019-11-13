@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Jquery 예제 1</title>
+<!-- CDN방식 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// document가 준비되면 다음 함수를 실행해
+	$(document).ready(function() {
+	$("h1").css("color","red");
+	$("p").css("color","blue");
+	$(".item").css("color","green");
+	})
+</script>
+</head>
+<body>
+
+<h1>Jquery1<p>Jquery1</p></h1>
+<h1>Jquery1</h1><p>Jquery1</p>
+
+<h1 class="item">Jquery1 class=item</h1>
+
+</body>
+</html>

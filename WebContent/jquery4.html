@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>위치관련 선택자 예제 : 짝수인덱스, 홀수인덱스로 구분</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//짝수 인덱스 tr태그 : 파랑바탕 흰글씨
+		$("tr:even").css({"background":"lightblue","color":"white"}); //json형태
+		//홀수 인덱스 tr태그 : 초록바탕 검정글씨
+		$("tr:odd").css({"background":"lightgreen","color":"white"}); //json형태
+		//첫번째 tr태그 : 검정바탕 노랑글씨
+		$("tr:first").css("background","lightgray").css("color","black");
+		
+	})
+</script>
+</head>
+<body>
+
+<table border="1">
+	<tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+	<tr><th>홍길동</th><th>O형</th><th>서울</th></tr>
+	<tr><th>이몽룡</th><th>A형</th><th>남원</th></tr>
+	<tr><th>임꺽정</th><th>B형</th><th>전주</th></tr>
+	<tr><th>김삿갓</th><th>AB형</th><th>하남</th></tr>
+</table>
+
+</body>
+</html>

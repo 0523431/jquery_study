@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>위치관련 필터 예제 : nth-child()</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// 3으로 나눈 나머지가 1 => 첫번째 위치 (인덱스0)
+	// 3으로 나눈 나머지가 2 => 두번째 위치
+	// 3으로 나눈 나머지가 3 => 세번째 위치
+	$(function() {
+		$("tr:nth-child(3n +1)").css("background", "lightgreen");
+		$("tr:nth-child(3n +2)").css("background", "lightgray");
+		$("tr:nth-child(3n)").css("background", "lightblue");
+		// 첫번째 tr태그
+		//$("tr:eq(0)").css({"background":"black","color":"white"});
+		// 세번째 tr태그
+		$("tr:eq(2)").css("color","blue");
+	})
+</script>
+
+</head>
+<body>
+<table border="1">
+	<tr><th width="20%">이름</th><th width="20%">혈액형</th><th width="20%">지역</th></tr>
+	<tr><th>홍길동</th><th>O형</th><th>서울</th></tr>
+	<tr><th>이몽룡</th><th>A형</th><th>남원</th></tr>
+	<tr><th>임꺽정</th><th>B형</th><th>전주</th></tr>
+	<tr><th>김삿갓</th><th>AB형</th><th>하남</th></tr>
+	<tr><th>김몽몽</th><th>AB형</th><th>수원</th></tr>
+	<tr><th>플레인</th><th>O형</th><th>상주</th></tr>
+	<tr><th>요거트</th><th>AB형</th><th>해남</th></tr>
+</table>
+</body>
+</html>
